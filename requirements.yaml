@@ -1,0 +1,6 @@
+name: m1
+dependencies:
+  - black
+  - pip
+  - pylint
+  - python
