@@ -9,7 +9,6 @@ class UnionFind:
     """
 
     def __init__(self, size):
-        self.index = list(range(size))
         self.root = list(range(size))
 
     def find(self, xint):
