@@ -11,6 +11,7 @@ class UnionFind:
 
     def __init__(self, size):
         self.root = list(range(size))
+        self.rank = [1] * size
 
     def find(self, xint):
         """
@@ -27,7 +28,13 @@ class UnionFind:
         rootx = self.find(xint)
         rooty = self.find(yint)
         if rootx != rooty:
-            self.root[rooty] = rootx
+            if self.rank[rootx] > self.rank[rooty]:
+                self.root[rooty] = rootx
+            elif self.rank[rootx] < self.rank[rooty]:
+                self.root[rootx] = rooty
+            else:
+                self.root[rooty] = rootx
+                self.rank[rooty] += 1
 
     def connected(self, xint, yint):
         """

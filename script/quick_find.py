@@ -1,6 +1,7 @@
 """
 UnionFind class
 """
+from time import time
 
 
 class UnionFind:
@@ -36,6 +37,7 @@ class UnionFind:
 
 
 if __name__ == "__main__":
+    a = time()
     # Test Case
     uf = UnionFind(10)
     # 1-2-5-6-7 3-8-9 4
@@ -51,3 +53,4 @@ if __name__ == "__main__":
     # 1-2-5-6-7 3-8-9-4
     uf.union(9, 4)
     print(uf.connected(4, 9))  # true
+    print(time() - a)
